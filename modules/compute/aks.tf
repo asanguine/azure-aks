@@ -1,5 +1,3 @@
-# Generate random resource group name
-
 resource "azurerm_resource_group" "rg" {
 location = var.resource_group_location_aks
 name = var.aks_resource_group_name
@@ -24,7 +22,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     vm_size    = var.node_pool_vm_size
     node_count = var.node_count
     
-    #vnet_subnet_id = var.vnet_subnet_id
+    vnet_subnet_id = var.vnet_subnet_id
     
     auto_scaling_enabled = true
     min_count  = var.min_node_count  
@@ -36,5 +34,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   network_profile {
     network_plugin    = "kubenet"
     load_balancer_sku = "standard"  
+    service_cidr      = "10.0.2.0/24"
+    dns_service_ip = "10.0.2.10"
   }
 }

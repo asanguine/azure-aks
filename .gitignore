@@ -18,5 +18,4 @@ modules/launch_template/terraform-key.pem
 environments/dev/03-infra-compute/terraform-key.pem
 environments/prod/03-infra-compute/terraform-key.pem
 environments/dev/.terraform/
-environments/dev/store-tfstate.sh
 .gitlab-ci.yml

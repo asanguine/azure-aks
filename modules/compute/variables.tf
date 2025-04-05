@@ -10,9 +10,9 @@ variable "cluster_name" {
   type = string
 }
 
-# variable "vnet_subnet_id" {
-#   type = string
-# }
+variable "vnet_subnet_id" {
+  type = string
+}
 
 variable "node_count" {
   type        = number

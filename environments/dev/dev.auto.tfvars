@@ -82,3 +82,7 @@ node_pool_name = "nodepool"
 node_pool_vm_size = "Standard_B2s"
 min_node_count = 1
 max_node_count = 2
+
+#acr
+acr_name = "devacrbirkan"
+acr_sku = "Standard"

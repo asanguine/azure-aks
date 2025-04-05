@@ -132,3 +132,14 @@ variable "min_node_count" {
 variable "max_node_count" {
   type = number
 }
+
+################
+# ACR
+###############
+variable "acr_sku" {
+  type = string
+}
+
+variable "acr_name" {
+  type = string
+}
