@@ -40,7 +40,11 @@ jobs:
                                   '${{ secrets.KEYVAULT_NAME }}' \
                                   '${{ secrets.SECRET_NAME }}' \
                                   '${{ secrets.LOCATION }}' "
-
+          echo $RESOURCE_GROUP_NAME
+          echo $STORAGE_ACCOUNT_NAME
+          echo $CONTAINER_NAME
+          echo $ARM_ACCOUNT_KEY
+          echo "====================="
           terraform init -backend-config="resource_group_name=$RESOURCE_GROUP_NAME" \
                -backend-config="storage_account_name=$STORAGE_ACCOUNT_NAME" \
                -backend-config="container_name=$CONTAINER_NAME" \
