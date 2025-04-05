@@ -25,6 +25,9 @@ jobs:
 
       - name: Change to Environment Directory
         run: | 
+          pwd
+          ls
+          ls -al
           cd environments/${{ github.ref == 'refs/heads/dev' && 'dev' || (github.ref == 'refs/heads/main' && 'prod' || '') }}
           pwd
 
