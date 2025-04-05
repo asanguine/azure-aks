@@ -12,7 +12,7 @@ jobs:
     if: github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/prod'
     runs-on: ubuntu-latest
     container:
-      image: danielscholl/terraform-azure:latest
+      image: 1kan/birkan-terraform-azure
       options: --user root
 
     steps:
@@ -60,7 +60,7 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/prod' }}
     runs-on: ubuntu-latest
     container:
-      image: danielscholl/terraform-azure:latest
+      image: 1kan/birkan-terraform-azure
       options: --user root
     needs: setup
 
