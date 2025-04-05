@@ -79,3 +79,5 @@ export CONTAINER_NAME="$CONTAINER_NAME"
 export SUBSCRIPTION_ID="$SUBSCRIPTION_ID"
 # Confirmation message
 echo "ARM_ACCOUNT_KEY has been set successfully."
+echo $ARM_ACCOUNT_KEY
+echo "====did you see  the key??==="
