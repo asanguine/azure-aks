@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: danielscholl/terraform-azure:latest
+      options: --user root
 
     steps:
       - name: Checkout code
@@ -60,6 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: danielscholl/terraform-azure:latest
+      options: --user root
     needs: setup
 
     steps:
