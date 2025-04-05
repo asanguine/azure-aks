@@ -31,15 +31,15 @@ jobs:
         run: |
           cd environments/${{ github.ref == 'refs/heads/dev' && 'dev' || (github.ref == 'refs/heads/main' && 'prod' || '') }}
           chmod +x store-tfstate.sh
-          source store-tfstate.sh "${{ secrets.TENANT_ID }}" \
-                                  "${{ secrets.SUBSCRIPTION_ID }}" \
-                                  "${{ secrets.USER_EMAIL }}" \
-                                  "${{ secrets.RESOURCE_GROUP_NAME }}" \
-                                  "${{ secrets.STORAGE_ACCOUNT_NAME }}" \
-                                  "${{ secrets.CONTAINER_NAME }}" \
-                                  "${{ secrets.KEYVAULT_NAME }}" \
-                                  "${{ secrets.SECRET_NAME }}" \
-                                  "${{ secrets.LOCATION }}"
+          bash -c "source store-tfstate.sh '${{ secrets.TENANT_ID }}' \
+                                  '${{ secrets.SUBSCRIPTION_ID }}' \
+                                  '${{ secrets.USER_EMAIL }}' \
+                                  '${{ secrets.RESOURCE_GROUP_NAME }}' \
+                                  '${{ secrets.STORAGE_ACCOUNT_NAME }}' \
+                                  '${{ secrets.CONTAINER_NAME }}' \
+                                  '${{ secrets.KEYVAULT_NAME }}' \
+                                  '${{ secrets.SECRET_NAME }}' \
+                                  '${{ secrets.LOCATION }}' "
 
           terraform init -backend-config="resource_group_name=$RESOURCE_GROUP_NAME" \
                -backend-config="storage_account_name=$STORAGE_ACCOUNT_NAME" \
