@@ -12,11 +12,8 @@ KEYVAULT_NAME="$7"
 SECRET_NAME="$8"
 LOCATION="$9"
 
-# Ensure Azure CLI is logged in
-if ! az account show &> /dev/null; then
-  echo "Logging into Azure..."
-  az login
-fi
+# Set the subscription
+az account set --subscription "$SUBSCRIPTION_ID"
 
 # Check if Resource Group exists
 if ! az group show --name $RESOURCE_GROUP_NAME &> /dev/null; then
@@ -79,5 +76,3 @@ export CONTAINER_NAME="$CONTAINER_NAME"
 export SUBSCRIPTION_ID="$SUBSCRIPTION_ID"
 # Confirmation message
 echo "ARM_ACCOUNT_KEY has been set successfully."
-echo $ARM_ACCOUNT_KEY
-echo "====did you see  the key??==="
