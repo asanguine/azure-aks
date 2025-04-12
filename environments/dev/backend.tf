@@ -5,5 +5,6 @@ terraform {
     container_name        = ""      
     key                   = "terraform.tfstate" 
     access_key            = ""
+    use_azuread_auth      = true
   }
 }
