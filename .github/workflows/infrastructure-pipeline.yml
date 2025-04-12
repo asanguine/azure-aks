@@ -41,7 +41,10 @@ jobs:
           export ARM_CLIENT_ID='${{ secrets.ARM_CLIENT_ID }}'
           export ARM_CLIENT_SECRET='${{ secrets.ARM_CLIENT_SECRET }}'
           export ARM_SUBSCRIPTION_ID='${{ secrets.SUBSCRIPTION_ID }}'
-          export ARM_TENANT_ID='${{ secrets.AZURE_TENANT_ID }}'            
+          export ARM_TENANT_ID='${{ secrets.AZURE_TENANT_ID }}'   
+          export RESOURCE_GROUP_NAME='${{ secrets.RESOURCE_GROUP_NAME }}'
+          export STORAGE_ACCOUNT_NAME='${{ secrets.STORAGE_ACCOUNT_NAME }}'
+          export CONTAINER_NAME='${{ secrets.CONTAINER_NAME }}'
 
           terraform init -backend-config="resource_group_name=$RESOURCE_GROUP_NAME" \
                -backend-config="storage_account_name=$STORAGE_ACCOUNT_NAME" \
